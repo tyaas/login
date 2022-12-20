@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Adit</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@300&display=swap"
+      rel="stylesheet"/>
+  </head>
+  <body>
+    <section>
+    <div class="container">
+      <h1>User Login</h1>
+      <form class="login_form" name="form" action="home.html" onsubmit="return vaildated ()">
+        <div class="font">Username</div>
+        <input id="nonum" type="text" name="username" />
+        <div id="username_error">
+          Silakan Masukkan Username
+        </div>
+        <div class="font2">Password</div>
+        <input type="password" name="password" maxlength="8" />
+        <div id="pass_error">Silakan Masukkan Password</div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+</section>
+  </body>
+  <script src="valid.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    function testInput(event) {
+      var value = String.fromCharCode(event.which);
+      var pattern = new RegExp(/[a-zåäö ]/i);
+      return pattern.test(value);
+    }
+
+    $("#nonum").bind("keypress", testInput);
+  </script>
+</html>
